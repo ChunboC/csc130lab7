@@ -1,5 +1,6 @@
 package lab7;
 
+import java.util.LinkedList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -50,12 +51,16 @@ public class Lab7App {
 			LocalDate pastDate = LocalDate.of(2020, month, day);
 			if (tempDate.equals(pastDate))
 				cases.add(temp);
-			else if (tempDate.equals(pastDate.minusDays(1)))
+			else if (tempDate.equals(pastDate.minusDays(2)))
 				yesterdayCases.add(temp);
 		}
 		if (cases.isEmpty())
 			cases = yesterdayCases;
-		System.out.println(cases);
+		for (int i = 0; i < cases.size(); i++) {
+			System.out.println(cases.get(i));
+		}
+		System.out.println(cases.size());
+		
 
 		scan = new Scanner(System.in);
 		String prompt = "Enter country code or q to quit: ";
